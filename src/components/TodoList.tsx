@@ -40,15 +40,16 @@ const TodoList: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>ToDoリスト</h1>
+    <div className="myTodo">
+      <h1 className="myTodo__ttl">ToDoリスト</h1>
       {/* 親コンポーネントに渡すためのコールバック関数addTodo */}
       <TodoForm addTodo={addTodo} />
-      <ul>
+      <ul className="myTodo__list">
         {todos.map((todo, index) => (
           <li
             key={index}
             style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+            className="myTodo__item"
           >
             {todo.text}
             <button onClick={() => completeTodo(index)}>タスク完了</button>
